@@ -17,6 +17,28 @@ public class DepartmentStore {
         this.generalDepartment = generalDepartment;
     }
 
+    public void showTechStock(){
+        for (var tech : technologyDepartment.getProducts()){
+            tech.info();
+        }
+        for (var product : generalDepartment.getProducts()){
+            if (product instanceof Technology){
+                product.info();
+            }
+        }
+    }
+
+    public void showClothesStock(){
+        for (var clothes : clothesDepartment.getProducts()){
+            clothes.info();
+        }
+        for (var product : generalDepartment.getProducts()){
+            if (product instanceof Clothes){
+                product.info();
+            }
+        }
+    }
+
     public String getName() {
         return name;
     }

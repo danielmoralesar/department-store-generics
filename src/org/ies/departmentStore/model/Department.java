@@ -40,6 +40,8 @@ public class Department<T extends Product> {
 
     @Override
     public boolean equals(Object o) {
+
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Department<?> that = (Department<?>) o;
         return floor == that.floor && Objects.equals(manager, that.manager) && Objects.deepEquals(products, that.products);

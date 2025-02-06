@@ -22,11 +22,12 @@ public class MainApp {
         do {
             option = chooseOption();
             if (option == 1){
-                // TODO option 1
+                departmentStore.showTechStock();
             } else if (option == 2){
-                // TODO option 2
+                departmentStore.showClothesStock();
             } else if (option == 3){
-                // TODO option 3;
+                departmentStore.showTechStock();
+                departmentStore.showClothesStock();
             } else {
                 System.out.println("¡Hasta luego!");
             }
