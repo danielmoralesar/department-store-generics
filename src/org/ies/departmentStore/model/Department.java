@@ -14,6 +14,22 @@ public class Department<T extends Product> {
         this.products = products;
     }
 
+    public void showTechStock(){
+        for (var product : products){
+            if (product instanceof Technology){
+                product.info();
+            }
+        }
+    }
+
+    public void showClothesStock(){
+        for (var product : products){
+            if (product instanceof Clothes){
+                product.info();
+            }
+        }
+    }
+
     public int getFloor() {
         return floor;
     }

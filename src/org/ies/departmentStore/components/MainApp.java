@@ -17,17 +17,22 @@ public class MainApp {
     public void run(){
         System.out.println("¡Bienvenido!");
         var departmentStore = departmentStoreReader.read();
+        var general = departmentStore.getGeneralDepartment();
+        var tech = departmentStore.getTechnologyDepartment();
+        var cloth = departmentStore.getClothesDepartment();
 
         int option;
         do {
             option = chooseOption();
             if (option == 1){
-                departmentStore.showTechStock();
+                tech.showTechStock();
+                general.showTechStock();
             } else if (option == 2){
-                departmentStore.showClothesStock();
+                cloth.showClothesStock();
+                cloth.showClothesStock();
             } else if (option == 3){
-                departmentStore.showTechStock();
-                departmentStore.showClothesStock();
+                tech.showTechStock();
+                cloth.showClothesStock();
             } else {
                 System.out.println("¡Hasta luego!");
             }
@@ -41,6 +46,7 @@ public class MainApp {
             System.out.println("1. Mostrar todos los productos de electrónica");
             System.out.println("2. Mostrar todos los productos de ropa");
             System.out.println("3. Mostrar todo el stock disponible");
+            System.out.println("4. Salir");
             option = scanner.nextInt();
             scanner.nextLine();
         } while (option < 1 || option > 4);
