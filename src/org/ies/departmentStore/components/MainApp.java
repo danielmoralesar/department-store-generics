@@ -43,6 +43,9 @@ public class MainApp {
             System.out.println("4. Salir");
             option = scanner.nextInt();
             scanner.nextLine();
+            if (option < 1 || option > 4){
+                System.out.println("Opción no válida, inténtelo de nuevo");
+            }
         } while (option < 1 || option > 4);
         return option;
     }
