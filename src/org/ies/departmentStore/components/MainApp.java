@@ -1,7 +1,7 @@
 package org.ies.departmentStore.components;
 
 import org.ies.departmentStore.components.reader.Reader;
-import org.ies.departmentStore.model.DepartmentStore;
+import org.ies.departmentStore.model.*;
 
 import java.util.Scanner;
 
@@ -17,22 +17,16 @@ public class MainApp {
     public void run(){
         System.out.println("¡Bienvenido!");
         var departmentStore = departmentStoreReader.read();
-        var general = departmentStore.getGeneralDepartment();
-        var tech = departmentStore.getTechnologyDepartment();
-        var cloth = departmentStore.getClothesDepartment();
 
         int option;
         do {
             option = chooseOption();
             if (option == 1){
-                tech.showTechStock();
-                general.showTechStock();
+                departmentStore.showTechStock();
             } else if (option == 2){
-                cloth.showClothesStock();
-                cloth.showClothesStock();
+                departmentStore.showClothsStock();
             } else if (option == 3){
-                tech.showTechStock();
-                cloth.showClothesStock();
+                departmentStore.showAllStock();
             } else {
                 System.out.println("¡Hasta luego!");
             }

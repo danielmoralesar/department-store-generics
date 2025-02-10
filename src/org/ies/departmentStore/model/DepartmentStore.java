@@ -17,6 +17,21 @@ public class DepartmentStore {
         this.generalDepartment = generalDepartment;
     }
 
+    public void showTechStock() {
+        technologyDepartment.showTechStock();
+        generalDepartment.showTechStock();
+    }
+
+    public void showClothsStock() {
+        clothesDepartment.showClothesStock();
+        generalDepartment.showClothesStock();
+    }
+
+    public void showAllStock(){
+        showTechStock();
+        showClothsStock();
+    }
+
     public String getName() {
         return name;
     }
@@ -79,4 +94,6 @@ public class DepartmentStore {
                 ", generalDepartment=" + generalDepartment +
                 '}';
     }
+
+
 }
